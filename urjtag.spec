@@ -5,12 +5,12 @@
 #
 Summary:	urjtag
 Name:		urjtag
-Version:	0.8
+Version:	0.9
 Release:	0.1
 License:	GPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/urjtag/%{name}-%{version}.tar.bz2
-# Source0-md5:	76af028b6ab2361cd945b1c7179b94b7
+# Source0-md5:	684fc54354e1e600102244c0e7bf6643
 URL:		http://urjtag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
