@@ -1,0 +1,18 @@
+--- urjtag-0.9/src/Makefile.am~orig	2008-09-14 12:49:44.000000000 +0200
++++ urjtag-0.9/src/Makefile.am	2008-11-21 13:40:31.000000000 +0100
+@@ -74,7 +74,6 @@
+ 	-Ltap -ltap \
+ 	-Lflash -lflash \
+ 	-Lbus -lbus \
+-	-lm \
+ 	@FTD2XXLIB@ \
+ 	@LIBINTL@
+ 
+@@ -96,5 +95,7 @@
+ jtag_LDADD += -ldmalloc
+ endif
+ 
++jtag_LDADD += -lm
++
+ localedir = $(datadir)/locale
+ INCLUDES = -DLOCALEDIR=\"$(localedir)\"
