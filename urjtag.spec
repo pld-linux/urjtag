@@ -1,9 +1,5 @@
 #
-# Conditional build:
-#%bcond_with	tests		# build with tests
-#%bcond_without	tests		# build without tests
-#
-Summary:	urjtag
+Summary:	Tool for communicating over JTAG
 Name:		urjtag
 Version:	0.9
 Release:	0.1
@@ -11,6 +7,7 @@ License:	GPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/urjtag/%{name}-%{version}.tar.bz2
 # Source0-md5:	684fc54354e1e600102244c0e7bf6643
+Patch0:		%{name}-fix-as_needed.patch
 URL:		http://urjtag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -19,25 +16,12 @@ BuildRequires:	libusb-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Nodesc
-
+UrJTAG aims to create an enhanced, modern tool for communicating over
+JTAG with flash chips, CPUs, and many more.
 
 %prep
 %setup -q
-#%setup -q -c -T
-#%setup -q -n %{name}
-#%setup -q -n %{name}-%{version}.orig -a 1
-#%patch0 -p1
-
-# undos the source
-#find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
-
-# remove CVS control files
-#find -name CVS -print0 | xargs -0 rm -rf
-
-# you'll need this if you cp -a complete dir in source
-# cleanup backups after patching
-find . '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
+%patch0 -p1
 
 %build
 %{__gettextize}
@@ -51,9 +35,6 @@ find . '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
-#install -d $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -73,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README THANKS doc/UrJTAG.txt doc/README.ejtag doc/howto_add_support_for_more_flash.txt
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_mandir}/man1/*1.gz
+%{_mandir}/man1/*
