@@ -7,7 +7,7 @@ Version:	0.9
 Release:	0.%{svnrev}.1
 License:	GPL v2
 Group:		Applications
-Source0:	http://dl.sourceforge.net/urjtag/%{name}-%{svnrev}.tar.bz2
+Source0:	%{name}-%{svnrev}.tar.bz2
 # Source0-md5:	d45cef438a688c18a8a767fffcec3c03
 Patch0:		%{name}-fix-as_needed.patch
 URL:		http://urjtag.sourceforge.net/
