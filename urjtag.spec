@@ -16,6 +16,7 @@ BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex >= 2.5.33
 BuildRequires:	gettext-devel
+BuildRequires:	libftdi-devel
 BuildRequires:	libusb-devel
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,7 +36,8 @@ JTAG with flash chips, CPUs, and many more.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--without-ftd2xx
 %{__make}
 
 
