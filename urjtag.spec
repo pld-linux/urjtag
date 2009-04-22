@@ -1,12 +1,12 @@
 #
 Summary:	Tool for communicating over JTAG
 Name:		urjtag
-Version:	0.9
+Version:	0.10
 Release:	0.1
 License:	GPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/urjtag/%{name}-%{version}.tar.bz2
-# Source0-md5:	684fc54354e1e600102244c0e7bf6643
+# Source0-md5:	c685c9bb33bbfa73d6ab7bacb92e6268
 Patch0:		%{name}-fix-as_needed.patch
 URL:		http://urjtag.sourceforge.net/
 BuildRequires:	autoconf
