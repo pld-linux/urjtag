@@ -1,0 +1,10 @@
+--- urjtag-0.10/data/Makefile.am.org	2011-08-19 22:59:48.000000000 +0200
++++ urjtag-0.10/data/Makefile.am	2011-08-19 23:00:48.000000000 +0200
+@@ -74,7 +74,6 @@
+ 	analog/bf548/bf548 \
+ 	analog/bf561/STEPPINGS \
+ 	analog/bf561/bf561 \
+-	analog/PARTS \
+ 	analog/sharc21065l/STEPPINGS \
+ 	analog/sharc21065l/sharc21065l \
+ 	brecis/PARTS \

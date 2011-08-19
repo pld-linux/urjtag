@@ -8,6 +8,7 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/urjtag/%{name}-%{version}.tar.bz2
 # Source0-md5:	c685c9bb33bbfa73d6ab7bacb92e6268
 Patch0:		%{name}-fix-as_needed.patch
+Patch1:		%{name}-data.patch
 URL:		http://urjtag.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,6 +23,7 @@ JTAG with flash chips, CPUs, and many more.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__gettextize}
